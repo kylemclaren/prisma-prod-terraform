@@ -1,16 +1,22 @@
 env:
-  - tf_version=0.11.10
+  global:
+    - TF_VERSION=0.11.10
+    - TRAVIS_BUILD_DIR=aws
 
 sudo: required
 
 language: bash
 
 before_install:
-  - wget https://releases.hashicorp.com/terraform/${tf_version}/terraform_${tf_version}_linux_amd64.zip -O /tmp/terraform.zip
+  - wget https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip -O /tmp/terraform.zip
   - sudo unzip -d /usr/local/bin/ /tmp/terraform.zip
+  - cd $TRAVIS_BUILD_DIR
   - rm -rf .terraform
   - terraform --version
   - terraform init
 
 script:
   - terraform validate
+
+after_script:
+  - rm -rf .terraform

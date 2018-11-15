@@ -1,4 +1,7 @@
 .terraform
 *.tfstate
+*.tfstate.*
 *.tfstate.d
+*.tfvars
 .env
+archived/*
