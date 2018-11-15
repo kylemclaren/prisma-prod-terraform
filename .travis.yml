@@ -1,6 +1,7 @@
 env:
-  - tf_version=0.11.10
-  - TRAVIS_BUILD_DIR=aws
+  global:
+    - tf_version=0.11.10
+    - TRAVIS_BUILD_DIR=aws
 
 sudo: required
 
