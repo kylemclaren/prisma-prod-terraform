@@ -14,3 +14,6 @@ before_install:
 
 script:
   - terraform validate
+
+after_script:
+  - echo "Cleaning up..." && rm -rf .terraform
