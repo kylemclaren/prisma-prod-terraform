@@ -5,3 +5,4 @@
 *.tfvars
 .env
 archived/*
+aws/yaml/config_map_aws_auth.yaml
