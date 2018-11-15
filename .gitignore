@@ -4,3 +4,4 @@
 *.tfstate.d
 *.tfvars
 .env
+archived/*
